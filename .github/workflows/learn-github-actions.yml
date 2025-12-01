@@ -3,19 +3,21 @@ name: learn-github-actions  # name of the workflow
 run-name: ${{ github.actor }} is learning GitHub Actions # name of individual runs of the workflow
 
 on: 
-  - push
+  push: # this workflow will run when there is a push:
+    branches: # to the branch "main" or "test"
+      - test
+    tags: # with a commit tagged "test" 
+      - test
+    paths: # or that changes a file that ends in ".test"
+      - '**.test'
 
-jobs: {
-  check-bats-version: {
-    runs-on: ubuntu-latest, 
-    steps: [
-      uses: actions/checkout@v5, 
-        {
-        uses: actions/setup-node@v4, 
-        with: {node-version: '20'}
-        }, 
-          run: npm install -g bats, 
-          run: bats -v 
-      ] 
-    }
-  }
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install -g bats
+      - run: bats -v
