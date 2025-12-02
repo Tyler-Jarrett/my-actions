@@ -5,7 +5,7 @@
 
 name: learn-github-actions  # : indicates a mapping of a key: value pair, the space after the colon is mandatory
 
-run-name: ${{ github.actor }} is learning GitHub Actions # ${{ }} is what github uses to indicate a context (effectively a variable), this formating is not universal across applications
+run-name: ${{ github.actor }} is learning GitHub Actions # ${{ }} is what github uses to indicate a context (effectively a wat to access a variable), this formating is not universal across applications
 
 on: 
   - push # - indicates a sequence (list) of scalars or mappings
