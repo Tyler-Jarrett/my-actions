@@ -86,7 +86,7 @@ jobs:
           name: gcc_hello_world
 
       - name: Create release
-        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b  #sha value for the 2.5 release commit of this action to ensure it is immutable
         with:
           tag_name: "1.0.0"
           name: 1.0.${{ github.run_id }}
