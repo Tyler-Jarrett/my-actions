@@ -47,5 +47,6 @@ jobs:
           name: clang_hello_world
 
       - name: Run executable
-        run: chmod +x hello_world.exe
-             ./hello_world.exe
+        run: |
+          chmod +x hello_world.exe
+          ./hello_world.exe
